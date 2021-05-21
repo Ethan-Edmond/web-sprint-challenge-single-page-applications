@@ -42,6 +42,10 @@ font-weight: 600;
 &.left {
 border-width: 1px 0 1px 1px;
 }
+&:hover {
+  background: black;
+  color: white;
+}
 `;
 
 const Nav = (props) => {
