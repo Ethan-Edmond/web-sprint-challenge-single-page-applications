@@ -5,7 +5,6 @@ import Item from "./Item";
 import bgImage from "../Assets/Pizza.jpg";
 
 const StyledMain = styled.main`
-  background: red;
   overflow: auto;
 `;
 
@@ -42,6 +41,20 @@ const HeroLink = styled(Link)`
   }
 `;
 
+const ItemSection = styled.section`
+  padding: 2rem;
+`;
+
+const ItemsTitle = styled.h3`
+  font-weight: 600;
+  margin: 1rem 0;
+`;
+
+const ItemsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  
+`;
 const Home = ({hero}) => {
   return (
     <StyledMain>
@@ -49,13 +62,15 @@ const Home = ({hero}) => {
         <HeroTitle>Your favorite food, delivered while coding</HeroTitle>
         <HeroLink to="/pizza" id="order-pizza">Pizza?</HeroLink>
       </Hero>
-      <section className="items">
-        <h3>Food Delivery in Gotham City</h3>
-        {["McDonald's", "Sweetgreen", "Starbucks"].map(item => {
-          return (
-            <Item/>
-          );})}
-      </section>
+      <ItemSection>
+        <ItemsTitle>Food Delivery in Gotham City</ItemsTitle>
+        <ItemsContainer>
+          {["McDonald's", "Sweetgreen", "Starbucks"].map(item => {
+            return (
+              <Item/>
+            );})}
+        </ItemsContainer>
+      </ItemSection>
     </StyledMain>
   );
 };

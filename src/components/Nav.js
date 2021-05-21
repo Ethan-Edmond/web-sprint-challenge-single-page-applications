@@ -7,7 +7,7 @@ const NavHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1% 3%;
+  padding: 0.55rem 2rem;
 `;
 
 const NavTitle = styled.h1`
