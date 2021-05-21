@@ -4,8 +4,11 @@ const Form = ({values, update, submit}) => {
 
   const onChange = (event) => {
     const {name, type, value, checked} = event.target;
-    let valueToUse = (type === "checkbox") ? checked : value;
-    valueToUse = (type === "number") ? parseInt(value, 10) : valueToUse;
+    let valueToUse = (type === "checkbox") ?
+        checked :
+        (type === "number") ?
+          parseInt(value, 10) :
+          value;
     update(name, valueToUse);
   };
 
