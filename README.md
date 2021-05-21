@@ -33,8 +33,22 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
+
+It lets you match the current URL the same way that the router would, but
+without rerendering the page. It separates out the path, URL, url parameters and
+even gives you a boolean for whether the current URL matches exactly.
+
 1. How would you explain form validation to someone who has never programmed before?
+
+You know how websites have password requirements? Validation is making sure that
+what somebody inputs is acceptable to be put in the database or sent in an api
+call or whatever.
+
 1. In 1-2 sentences, define end to end testing.
+
+End to end testing is testing that the whole chain of code works. Which is
+pretty much just loading up the website and clicking around, but with a program
+doing the clicking and checking that the website is reacting right.
 
 ## Instructions
 
@@ -59,7 +73,7 @@ Your finished project must include all of the following requirements:
 - [x] A dropdown for pizza size with an id of "size-dropdown"
 - [x] A checklist for toppings - at least 4 (hint: name each separately!)
 - [x] Text input for special instructions with an id of "special-text"
-- [ ] An Add to Order button that has an id of "order-button" and that submits form and returns a database record of name, size, toppings and special instructions
+- [x] An Add to Order button that has an id of "order-button" and that submits form and returns a database record of name, size, toppings and special instructions
 
 Data should look something like
 ```

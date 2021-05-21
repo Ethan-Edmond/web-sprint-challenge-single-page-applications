@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({values, update, submit}) => {
+const Form = ({values, errors, update, submit, disabled}) => {
 
   const onChange = (event) => {
     const {name, type, value, checked} = event.target;
@@ -24,7 +24,10 @@ const Form = ({values, update, submit}) => {
       <form id="pizza-form" onSubmit={onSubmit}>
         <h3>Build Your Own Pizza</h3>
         <div className="form-section">
-          <h5>Name</h5>
+          <div className="title-n-errors">
+            <h5>Name</h5>
+            {errors.name.length && <p>{errors.name}</p>}
+          </div>
           <input onChange={onChange} type="text" name="name" value={values.name} id="name-input"/>
         </div>
         <div className="form-section">
@@ -126,7 +129,7 @@ const Form = ({values, update, submit}) => {
         </div>
         <div className="form-end">
           <input onChange={onChange} value={values.orderAmt} name="orderAmt" type="number" min="0"/>
-          <button id="order-button">Add to Order CALCULATED_PRICE</button>
+          <button disabled={disabled} id="order-button">Add to Order CALCULATED_PRICE</button>
         </div>
       </form>
     </main>
