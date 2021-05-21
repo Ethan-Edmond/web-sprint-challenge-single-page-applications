@@ -7,7 +7,7 @@ const Home = (props) => {
     <main>
       <section className="hero">
         <h2>Your favorite food, delivered while coding</h2>
-        <Link to="/pizza">Pizza?</Link>
+        <Link to="/pizza" id="order-pizza">Pizza?</Link>
       </section>
       <section className="items">
         <h3>Food Delivery in Gotham City</h3>
