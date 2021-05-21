@@ -3,12 +3,11 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const NavHeader = styled.header`
-  background: #eeeeee;
   overflow: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 3%;
+  padding: 1% 3%;
 `;
 
 const NavTitle = styled.h1`
@@ -20,24 +19,25 @@ font-size: 1.7rem;
 
 const StyledNav = styled.nav`
   width: 50%;
-background: white;
 `;
 
 const StyledUL = styled.ul`
   list-style: none;
   display: flex;
+  justify-content: flex-end;
 `;
 
 const StyledNavLink = styled(NavLink)`
 color: black;
 text-decoration: none;
-padding: 0.5rem 4rem;
+padding: 0.5rem 3rem;
 background: white;
 border: 1px solid #808080;
 border-radius: 3px;
+font-weight: 600;
 &.active {
   background: black;
-  color: red;
+  color: white;
 }
 &.left {
 border-width: 1px 0 1px 1px;
@@ -51,7 +51,7 @@ const Nav = (props) => {
       <StyledNav>
         <StyledUL>
           <li>
-            <StyledNavLink className="left" to="/">Home</StyledNavLink>
+            <StyledNavLink className="left" exact to="/">Home</StyledNavLink>
           </li>
           <li>
             <StyledNavLink to="/help">Help</StyledNavLink>

@@ -99,7 +99,7 @@ const App = () => {
             submit={formSubmit}
             disabled={formDisabled}/>
         </Route>
-        <Route exact path="/">
+        <Route path="/">
           <Home/>
         </Route>
       </Switch>
