@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Form from "./components/Form";
 import Help from "./components/Help";
 
+const initForm= {
+  name: "",
+  size: "",
+  sauce: "",
+  pepperoni: false,
+  sausage: false,
+  canadianBacon: false,
+  spicySausage: false,
+  grilledChicken: false,
+  onions: false,
+  greenPepper: false,
+  dicedTomatoes: false,
+  blackOlives: false,
+  roastedGarlic: false,
+  artichokeHearts: false,
+  threeCheese: false,
+  pineapple: false,
+  extraCheese: false,
+  special: "",
+  orderAmt: 1
+};
+
 const App = () => {
+  const [formValues, setFormValues] = useState(initForm);
+
   return (
     <Router>
       <Nav/>
@@ -14,7 +38,7 @@ const App = () => {
           <Help/>
         </Route>
         <Route path="/pizza">
-          <Form/>
+          <Form values={formValues}/>
         </Route>
         <Route path="/">
           <Home/>

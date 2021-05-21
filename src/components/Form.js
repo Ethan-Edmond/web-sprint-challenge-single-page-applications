@@ -1,15 +1,29 @@
 import React from "react";
 
-const Form = () => {
+const Form = ({values}) => {
+
+  const onChange = (event) => {
+    const {name, type, value, checked} = event.type;
+
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <main className="form-container">
       <h4>Build Your Own Pizza</h4>
       <div role="img" aria-label="A picture of delicious pizza" className="pizza-form-image"></div>
-      <form id="pizza-form">
+      <form id="pizza-form" onSubmit={onSubmit}>
         <h3>Build Your Own Pizza</h3>
         <div className="form-section">
+          <h5>Name</h5>
+          <input type="text" name="name"/>
+        </div>
+        <div className="form-section">
           <h5>Choice of Size</h5>
-          <select>
+          <select id="size-dropdown">
             <option>Select</option>
             <option>Small</option>
             <option>Medium</option>
