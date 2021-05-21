@@ -1,11 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
 
 const App = () => {
   return (
     <Router>
-      <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
+      <Nav/>
+      <Switch>
+        <Route path="/">
+          <Home/>
+        </Route>
+      </Switch>
     </Router>
   );
 };
