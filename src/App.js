@@ -30,6 +30,14 @@ const initForm= {
 const App = () => {
   const [formValues, setFormValues] = useState(initForm);
 
+  const formUpdate = (name, value) => {
+    setFormValues({...formValues, [name]: value});
+  };
+
+  const formSubmit = () => {
+    console.log(formValues);
+  };
+
   return (
     <Router>
       <Nav/>
@@ -38,7 +46,7 @@ const App = () => {
           <Help/>
         </Route>
         <Route path="/pizza">
-          <Form values={formValues}/>
+          <Form values={formValues} update={formUpdate} submit={formSubmit}/>
         </Route>
         <Route path="/">
           <Home/>
